@@ -1,75 +1,54 @@
-# Nuxt Minimal Starter
+# Spektrix API Browser
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A simple UI for exploring the Spektrix API's events and instances endpoints.
 
-## Setup
+## Overview
 
-Make sure to install dependencies:
+This application lets you browse event and instance information from the Spektrix API.
 
-```bash
-# npm
-npm install
+### Features
 
-# pnpm
-pnpm install
+- View Spektrix events
+- See instance details
+- Enter a Spektrix system name to get started
 
-# yarn
-yarn install
+## Getting Started
 
-# bun
-bun install
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jvalentine-trgarts/spektrix-api-browser.git
+   cd spektrix-api-browser
+   ```
 
-## Development Server
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Start the development server on `http://localhost:3000`:
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-```bash
-# npm
-npm run dev
+## Usage
 
-# pnpm
-pnpm dev
+- Enter a Spektrix instance name
+- See events & instances
 
-# yarn
-yarn dev
+### What is a Spektrix instance name, and how do I find my client's instance name?
 
-# bun
-bun run dev
-```
+Spektrix instance names can be found in the URL of any Spektrix page imediately following the domain. For example:
+- If you know the URL for the client interface: https://system.spektrix.com/<span style="display: inline-block; padding: 0 0.25rem; background-color: #FFC;">newwolsey</span>/client/Login.aspx
+- Or if you have encountered a Spektrix iFrame hosted by client's system: https://spektrix.wolseytheatre.co.uk/<span style="display: inline-block; padding: 0 0.25rem; background-color: #FFC;">newwolsey</span>/website/chooseseats.aspx
 
-## Production
+## Contributing
 
-Build the application for production:
+Feel free to submit a Pull Request.
 
-```bash
-# npm
-npm run build
+## License
 
-# pnpm
-pnpm build
+This is free and unencumbered software released into the public domain.
 
-# yarn
-yarn build
+Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means.
 
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+No attribution required. Do whatever you want with it.
