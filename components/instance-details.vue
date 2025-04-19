@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import type { Instance } from "~/types/spektrix";
+import { formatDate } from '~/utils/formatters';
+
 const route = useRoute();
 const client = route.params.client as string;
 const selectedEvent = useSelectedEvent();
-
-const formatDate = (dateString: string) => {
-  const date = new Date(dateString);
-  return new Intl.DateTimeFormat(undefined, {
-    dateStyle: "medium",
-    timeStyle: "short",
-  }).format(date);
-};
 
 const { fetchInstances, instances, loading, error } = useInstances(client);
 
