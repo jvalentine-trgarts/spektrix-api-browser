@@ -140,7 +140,7 @@ import { formatDate, formatId } from "~/utils/formatters";
                     firstInstanceDateTime
                   </dd>
                   <dt class="sr-only">Type</dt>
-                  <dd class="font-mono text-xs text-gray-400">isoDateString</dd>
+                  <dd class="font-mono text-xs text-gray-400">string</dd>
                   <dt class="sr-only">Description</dt>
                   <dd class="text-xs text-gray-400 w-full flex-none">
                     <p>The datetime of the first performance of the event</p>

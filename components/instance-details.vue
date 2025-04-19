@@ -190,7 +190,7 @@ watch(
                   start
                 </dd>
                 <dt class="sr-only">Type</dt>
-                <dd class="font-mono text-gray-400">isoDateString</dd>
+                <dd class="font-mono text-gray-400">string</dd>
               </dl>
             </dt>
             <dd>
@@ -210,7 +210,7 @@ watch(
                   startSellingAtWeb
                 </dd>
                 <dt class="sr-only">Type</dt>
-                <dd class="font-mono text-gray-400">isoDateString</dd>
+                <dd class="font-mono text-gray-400">string</dd>
               </dl>
             </dt>
             <dd>
@@ -230,7 +230,7 @@ watch(
                   startSellingAtWebUtc
                 </dd>
                 <dt class="sr-only">Type</dt>
-                <dd class="font-mono text-gray-400">utcIsoDateString</dd>
+                <dd class="font-mono text-gray-400">string</dd>
               </dl>
             </dt>
             <dd>
@@ -250,7 +250,7 @@ watch(
                   startUtc
                 </dd>
                 <dt class="sr-only">Type</dt>
-                <dd class="font-mono text-gray-400">utcIsoDateString</dd>
+                <dd class="font-mono text-gray-400">string</dd>
               </dl>
             </dt>
             <dd>
@@ -270,7 +270,7 @@ watch(
                   stopSellingAtWeb
                 </dd>
                 <dt class="sr-only">Type</dt>
-                <dd class="font-mono text-gray-400">isoDateString</dd>
+                <dd class="font-mono text-gray-400">string</dd>
               </dl>
             </dt>
             <dd>
@@ -290,7 +290,7 @@ watch(
                   stopSellingAtWebUtc
                 </dd>
                 <dt class="sr-only">Type</dt>
-                <dd class="font-mono text-gray-400">utcIsoDateString</dd>
+                <dd class="font-mono text-gray-400">string</dd>
               </dl>
             </dt>
             <dd>
