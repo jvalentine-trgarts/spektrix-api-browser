@@ -1,16 +1,16 @@
 <script setup lang="ts">
 const selectedEvent = useSelectedEvent();
 
-import { formatDate, formatId } from '~/utils/formatters';
+import { formatDate, formatId } from "~/utils/formatters";
 </script>
 
 <template>
   <div>
     <div v-if="selectedEvent">
-      <div class="px-4 sm:px-6 flex items-center space-x-6">
+      <div class="flex items-center">
         <img
           v-if="selectedEvent.imageUrl != ''"
-          class="inline-block object-cover size-24 rounded-md"
+          class="inline-block object-cover size-24 rounded-md mr-6"
           :src="selectedEvent.imageUrl"
           :alt="selectedEvent.name"
         />
@@ -610,7 +610,25 @@ import { formatDate, formatId } from '~/utils/formatters';
     </div>
 
     <div v-else>
-      <p class="text-sm text-gray-500">Please select an event from the list to view details</p>
+      <p class="text-sm text-gray-500">
+        Please select an event from the list to view details
+      </p>
+    </div>
+
+    <div v-else class="border-l-4 border-gray-400 bg-gray-50 p-4">
+      <div class="flex">
+        <div class="shrink-0">
+          <Icon
+            name="heroicons:document-magnifying-glass-solid"
+            class="size-5 text-gray-400"
+          />
+        </div>
+        <div class="ml-3">
+          <p class="text-sm text-gray-700">
+            Select an event from the list to view details
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
