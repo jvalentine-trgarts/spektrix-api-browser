@@ -549,61 +549,68 @@ import { formatDate, formatId } from "~/utils/formatters";
               </dd>
             </div>
 
-            <div class="bg-gray-50 px-4 py-3">
-              <h4 class="text-base font-semibold text-gray-900">
-                Custom attributes
-              </h4>
-
-              <p class="mt-1 max-w-2xl text-sm text-gray-500">
-                Spektrix allows additional custom attributes to be created.
-                These are set by the client and vary between systems. Values are
-                returned as
-                <span class="font-mono"
-                  >string || number || boolean || null</span
-                >.
-              </p>
-            </div>
-
-            <div
-              v-for="(value, key) in selectedEvent.attributes"
-              :key="key"
-              class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
+            <template
+              v-if="
+                selectedEvent.attributes &&
+                Object.keys(selectedEvent.attributes).length > 0
+              "
             >
-              <dt>
-                <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
-                  <dt class="sr-only">Name</dt>
-                  <dd
-                    class="font-mono inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-sm font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
-                  >
-                    attribute_{{ key }}
-                  </dd>
-                </dl>
-              </dt>
+              <div class="bg-gray-50 px-4 py-3">
+                <h4 class="text-base font-semibold text-gray-900">
+                  Custom attributes
+                </h4>
 
-              <dd
-                class="mt-1 font-mono flex text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"
+                <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                  Spektrix allows additional custom attributes to be created.
+                  These are set by the client and vary between systems. Values
+                  are returned as
+                  <span class="font-mono"
+                    >string || number || boolean || null</span
+                  >.
+                </p>
+              </div>
+
+              <div
+                v-for="(value, key) in selectedEvent.attributes"
+                :key="key"
+                class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
               >
-                <span class="grow">
-                  <span v-if="value">
-                    {{ value }}
+                <dt>
+                  <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
+                    <dt class="sr-only">Name</dt>
+                    <dd
+                      class="font-mono inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-sm font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
+                    >
+                      attribute_{{ key }}
+                    </dd>
+                  </dl>
+                </dt>
+
+                <dd
+                  class="mt-1 font-mono flex text-sm/6 text-gray-700 sm:col-span-2 sm:mt-0"
+                >
+                  <span class="grow">
+                    <span v-if="value">
+                      {{ value }}
+                    </span>
+                    <span
+                      v-else
+                      class="font-mono inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
+                    >
+                      null
+                    </span>
                   </span>
-                  <span
-                    v-else
-                    class="font-mono inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
-                  >
-                    null
+                  <span class="ml-4 shrink-0">
+                    <button
+                      type="button"
+                      class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
+                    >
+                      <Icon name="heroicons:clipboard-document-16-solid" />
+                    </button>
                   </span>
-                </span>
-                <span class="ml-4 shrink-0">
-                  <button
-                    type="button"
-                    class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
-                  >
-                    <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
-                </span>
-              </dd>
-            </div>
+                </dd>
+              </div>
+            </template>
           </dl>
         </div>
       </div>

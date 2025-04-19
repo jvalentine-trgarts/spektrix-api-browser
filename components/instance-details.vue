@@ -287,6 +287,9 @@ watch(
         </div>
 
         <div
+          v-if="
+            instance.attributes && Object.keys(instance.attributes).length > 0
+          "
           class="mt-4 border border-gray-200 rounded-md text-xs text-gray-500 flex flex-col space-y-1"
         >
           <div
