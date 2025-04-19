@@ -74,12 +74,12 @@ import { formatDate, formatId } from "~/utils/formatters";
                 </span>
 
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -120,12 +120,12 @@ import { formatDate, formatId } from "~/utils/formatters";
                 </span>
 
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -155,12 +155,12 @@ import { formatDate, formatId } from "~/utils/formatters";
                   selectedEvent.firstInstanceDateTime
                 }}</span>
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -191,12 +191,12 @@ import { formatDate, formatId } from "~/utils/formatters";
               >
                 <span class="grow">{{ selectedEvent.htmlDescription }}</span>
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -234,8 +234,7 @@ import { formatDate, formatId } from "~/utils/formatters";
 
                     <div class="flex items-center">
                       <span class="text-xs"
-                        >Corresponding identifier for use with iframes, API
-                        versions 1 and 2, and Data Feed API</span
+                        >For API v2</span
                       >
                       <span
                         class="ml-2 font-mono inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
@@ -246,12 +245,12 @@ import { formatDate, formatId } from "~/utils/formatters";
                   </div>
                 </span>
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -295,12 +294,12 @@ import { formatDate, formatId } from "~/utils/formatters";
                   </span>
                 </span>
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -331,12 +330,12 @@ import { formatDate, formatId } from "~/utils/formatters";
               >
                 <span class="grow">{{ selectedEvent.instanceDates }}</span>
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -377,12 +376,12 @@ import { formatDate, formatId } from "~/utils/formatters";
                   </span>
                 </span>
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -412,12 +411,12 @@ import { formatDate, formatId } from "~/utils/formatters";
                   selectedEvent.lastInstanceDateTime
                 }}</span>
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -445,12 +444,12 @@ import { formatDate, formatId } from "~/utils/formatters";
               >
                 <span class="grow">{{ selectedEvent.name }}</span>
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -494,12 +493,12 @@ import { formatDate, formatId } from "~/utils/formatters";
                   </span>
                 </span>
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
@@ -539,12 +538,12 @@ import { formatDate, formatId } from "~/utils/formatters";
                   </span>
                 </span>
                 <span class="ml-4 shrink-0">
-                  <button
+                  <!-- <button
                     type="button"
                     class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                   >
                     <Icon name="heroicons:clipboard-document-16-solid" />
-                  </button>
+                  </button> -->
                 </span>
               </dd>
             </div>
