@@ -10,7 +10,6 @@ export default defineNuxtConfig({
     mode: 'css',
     cssLayer: 'base'
   },
-  spaLoadingTemplate: false,
   vite: {
     plugins: [
       tailwindcss(),
