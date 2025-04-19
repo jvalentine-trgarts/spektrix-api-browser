@@ -2,6 +2,9 @@
 
 A simple UI for exploring the Spektrix API's events and instances endpoints.
 
+> [!TIP]
+> You can [find an online version of the tool here](https://main.d2wzvughgpvylq.amplifyapp.com/).
+
 ## Overview
 
 This application lets you browse event and instance information from the Spektrix API.
@@ -32,14 +35,25 @@ This application lets you browse event and instance information from the Spektri
 
 ## Usage
 
+View events and instances for any Spektrix client. To use the tool:
+
 - Enter a Spektrix instance name
 - See events & instances
 
+It's that simple :)
+
 ### What is a Spektrix instance name, and how do I find my client's instance name?
 
-Spektrix instance names can be found in the URL of any Spektrix page imediately following the domain. For example:
-- If you know the URL for the client interface: https://system.spektrix.com/<span style="display: inline-block; padding: 0 0.25rem; background-color: #FFC;">newwolsey</span>/client/Login.aspx
-- Or if you have encountered a Spektrix iFrame hosted by client's system: https://spektrix.wolseytheatre.co.uk/<span style="display: inline-block; padding: 0 0.25rem; background-color: #FFC;">newwolsey</span>/website/chooseseats.aspx
+Each client has a unique instance name, they are how Spektrix does multi-tennancy. 
+
+Spektrix instance names can be found in the URL of any Spektrix page, imediately following the domain.
+
+`https://system.spektrix.com/{client_name_here}/`
+
+The **New Wolsey Theatre**'s instance name is **newwolsey**. This can be confirmed by checking the URLs below - note that **newwolsey** imediately follows the domain in both.
+
+- If you know the URL for the client interface: https://system.spektrix.com/newwolsey/client/Login.aspx
+- Or if you have encountered a Spektrix iFrame hosted by client's system: https://spektrix.wolseytheatre.co.uk/newwolsey/website/EventList.aspx
 
 ## Contributing
 
