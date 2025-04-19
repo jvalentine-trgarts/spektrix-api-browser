@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { formatDate } from "~/utils/formatters";
+import { formatDate, formatId } from "~/utils/formatters";
 
 const route = useRoute();
 const client = route.params.client as string;
@@ -46,12 +46,53 @@ watch(
         <h4 class="text-gray-900 font-semibold text-sm">
           {{ formatDate(instance.startUtc) }}
         </h4>
-        <span
-          class="font-mono mt-2 inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
-          >{{ instance.id }}</span
-        >
 
         <div class="mt-4 text-xs text-gray-500 flex flex-col space-y-1">
+          <dl class="flex items-center justify-between flex-wrap">
+            <dt>
+              <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
+                <dt class="sr-only">Name</dt>
+                <dd
+                  class="font-mono inline-flex items-center rounded-md bg-gray-50 px-2 py-1 font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
+                >
+                  id
+                </dd>
+                <dt class="sr-only">Type</dt>
+                <dd class="font-mono text-gray-400">string</dd>
+              </dl>
+            </dt>
+            <dd>
+              <span
+                class="font-mono inline-flex items-center rounded-md bg-gray-50 px-2 py-1 font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
+              >
+                {{ instance.id }}
+              </span>
+            </dd>
+          </dl>
+
+          <dl class="flex items-center justify-between flex-wrap">
+            <dt>
+              <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
+                <dt class="sr-only">Name</dt>
+                <dd
+                  class="font-mono inline-flex items-center rounded-md bg-gray-50 px-2 py-1 font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
+                >
+                  id
+                </dd>
+                <dt class="sr-only">Type</dt>
+                <dd class="font-mono text-gray-400">string</dd>
+                <span>for API v2</span>
+              </dl>
+            </dt>
+            <dd>
+              <span
+                class="font-mono inline-flex items-center rounded-md bg-gray-50 px-2 py-1 font-medium text-gray-600 ring-1 ring-gray-500/10 ring-inset"
+              >
+                {{ formatId(instance.id) }}
+              </span>
+            </dd>
+          </dl>
+
           <dl class="flex items-center justify-between flex-wrap">
             <dt>
               <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
