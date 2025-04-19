@@ -600,12 +600,12 @@ import { formatDate, formatId } from "~/utils/formatters";
                     </span>
                   </span>
                   <span class="ml-4 shrink-0">
-                    <button
+                    <!-- <button
                       type="button"
                       class="cursor-pointer rounded-md bg-white font-medium text-gray-300 hover:text-gray-500"
                     >
                       <Icon name="heroicons:clipboard-document-16-solid" />
-                    </button>
+                    </button> -->
                   </span>
                 </dd>
               </div>
