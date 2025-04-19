@@ -126,7 +126,7 @@ onMounted(() => {
     </div>
 
     <main class="pl-72">
-      <div class="pr-96">
+      <div class="xl:pr-112">
         <div class="p-6">
           <EventDetails />
         </div>
@@ -134,7 +134,7 @@ onMounted(() => {
     </main>
 
     <aside
-      class="fixed inset-y-0 right-0 w-96 overflow-y-auto border-l border-gray-200 p-6 block"
+      class="fixed inset-y-0 hidden right-0 w-112 overflow-y-auto border-l border-gray-200 p-6 xl:block"
     >
       <InstanceDetails />
     </aside>
