@@ -1,5 +1,5 @@
-import { ref, computed } from "vue";
-import type { Event, Instance } from "~/types/spektrix";
+import { ref } from "vue";
+import type { Instance } from "~/types/spektrix";
 
 export function useEvents(client: string, eventId: string) {
   const instances = ref<Instance[]>([]);
