@@ -11,17 +11,12 @@ const formatDate = (dateString: string) => {
 
 const formatId = (id: string) => {
   const firstLetterIndex = id.search(/[A-Za-z]/);
-
   if (firstLetterIndex === -1) {
     throw new Error("No letter found in the string");
   }
-
   const numberPart = id.substring(0, firstLetterIndex);
-
   const firstLetter = id.charAt(firstLetterIndex);
-
   const number = parseInt(numberPart, 10);
-
   return firstLetter === "A" ? number : -number;
 };
 </script>
@@ -29,7 +24,7 @@ const formatId = (id: string) => {
 <template>
   <div>
     <div v-if="selectedEvent">
-      <div class="px-4 sm:px-0 flex items-center space-x-6">
+      <div class="px-4 sm:px-6 flex items-center space-x-6">
         <img
           v-if="selectedEvent.imageUrl != ''"
           class="inline-block object-cover size-24 rounded-md"
@@ -58,9 +53,9 @@ const formatId = (id: string) => {
       </div>
 
       <div>
-        <div class="mt-6 border-t border-gray-100">
-          <dl class="divide-y divide-gray-100">
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+        <div class="mt-6 border-t border-gray-200 -mx-6">
+          <dl class="divide-y divide-gray-200">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -106,7 +101,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -152,7 +147,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -187,7 +182,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -223,7 +218,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -278,7 +273,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -327,7 +322,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -363,7 +358,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -409,7 +404,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -444,7 +439,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -477,7 +472,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -526,7 +521,7 @@ const formatId = (id: string) => {
               </dd>
             </div>
 
-            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">
                   <dt class="sr-only">Name</dt>
@@ -589,7 +584,7 @@ const formatId = (id: string) => {
             <div
               v-for="(value, key) in selectedEvent.attributes"
               :key="key"
-              class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0"
+              class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6"
             >
               <dt>
                 <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">

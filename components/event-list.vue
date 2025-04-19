@@ -20,7 +20,7 @@ function selectEvent(event: Event) {
       v-for="event in props.events"
       :key="event.id"
       @click="selectEvent(event)"
-      :class="[{ 'bg-gray-50': selectedEvent?.id === event.id }, 'cursor-pointer py-2 px-2']"
+      :class="[{ 'bg-gray-100': selectedEvent?.id === event.id }, 'cursor-pointer py-4 px-6']"
     >
       <p class="text-sm/5 font-semibold text-gray-900">{{ event.name }}</p>
       <div class="text-xs text-gray-500">

@@ -28,7 +28,7 @@ export function useEvents(client: string) {
   }
   
   return {
-    events,
+    events: readonly(events),
     nameFilter,
     filteredEvents,
     loading,
