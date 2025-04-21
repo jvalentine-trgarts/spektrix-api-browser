@@ -31,6 +31,6 @@
 }
 
 * {
-  scrollbar-color: var(--color-gray-300) var(--color-gray-100);
+  scrollbar-color: var(--color-gray-200) var(--color-gray-100);
   scrollbar-width: thin;
 }
