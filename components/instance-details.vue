@@ -42,14 +42,51 @@ watch(
     <h3 class="text-base font-semibold text-gray-900">Instances</h3>
 
     <ul role="list" class="divide-y divide-gray-200 -mx-6">
-      <li v-for="instance in instances" class="py-4 px-6">
+      <li v-if="error" class="py-4 px-6">
+        <div class="rounded-md bg-red-50 p-4">
+          <div class="flex">
+            <div class="shrink-0">
+              <Icon
+                name="heroicons:exclamation-triangle-16-solid"
+                class="size-5 text-red-400"
+              />
+            </div>
+            <div class="ml-3">
+              <h3 class="text-sm font-medium text-red-800">
+                Unable to retrieve instances
+              </h3>
+              <div class="mt-2 text-sm text-red-700">
+                <p>
+                  There was an error retrieving instances for this event. To try
+                  again, select any other event and then select this one again.
+                  Otherwise, try refreshing the page.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+
+      <li v-else-if="loading" class="py-4 px-6 animate-pulse">
+        <div class="h-5 bg-gray-200 rounded-full w-2/3"></div>
+        <div class="mt-6">
+          <div v-for="i in 12" class="flex items-center justify-between mt-3">
+            <div
+              :class="i % 5 ? 'w-2/5' : 'w-3/5'"
+              class="h-3.5 bg-gray-200 rounded-full"
+            ></div>
+            <div class="h-3.5 bg-gray-200 rounded-full w-1/5"></div>
+          </div>
+        </div>
+        <div class="mt-6 h-8 bg-gray-200 rounded-md"></div>
+      </li>
+
+      <li v-else v-for="instance in instances" class="py-4 px-6">
         <h4 class="text-gray-900 font-semibold text-sm">
           {{ formatDate(instance.startUtc) }}
         </h4>
 
         <div class="mt-4 text-xs text-gray-500 flex flex-col space-y-1">
-
-
           <dl class="flex items-center justify-between flex-wrap">
             <dt>
               <dl class="m-0 flex flex-wrap items-center gap-x-3 gap-y-2">

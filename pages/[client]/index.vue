@@ -11,6 +11,7 @@ watch(
 );
 
 const client = route.params.client as string;
+
 interface SystemItem {
   systemName: string;
   clientName: string;
@@ -120,7 +121,7 @@ onMounted(() => {
         </div>
 
         <nav class="mt-2 flex -mx-6 flex-1 flex-col overflow-y-auto">
-          <EventList :events="filteredEvents" :loading="loading" :error="error" />
+          <EventList :events="filteredEvents" :loading="loading" :error="error"/>
         </nav>
       </div>
     </div>
