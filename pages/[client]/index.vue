@@ -128,7 +128,7 @@ onMounted(() => {
 
     <main class="pl-72">
       <div class="xl:pr-112">
-        <div class="p-6">
+        <div>
           <EventDetails />
         </div>
       </div>

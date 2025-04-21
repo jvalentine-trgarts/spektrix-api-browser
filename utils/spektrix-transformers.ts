@@ -1,4 +1,14 @@
-import type { SpektrixEvent, SpektrixInstance, Event, Instance, CustomAttributes } from "~/types/spektrix";
+import type {
+  SpektrixEvent,
+  SpektrixInstance,
+  Event,
+  Instance,
+  CustomAttributes,
+  SpektrixEventXml,
+  EventAvailability,
+} from "~/types/spektrix";
+
+import { XMLParser } from "fast-xml-parser";
 
 /**
  * Extracts the custom attributes from a Spektrix object
@@ -7,15 +17,15 @@ import type { SpektrixEvent, SpektrixInstance, Event, Instance, CustomAttributes
  */
 function extractCustomAttributes(obj: Record<string, any>): CustomAttributes {
   const attributes: CustomAttributes = {};
-  
+
   for (const [key, value] of Object.entries(obj)) {
-    if (key.startsWith('attribute_')) {
+    if (key.startsWith("attribute_")) {
       // Remove the 'attribute_' prefix and add to attributes object
-      const attributeName = key.replace('attribute_', '');
+      const attributeName = key.replace("attribute_", "");
       attributes[attributeName] = value;
     }
   }
-  
+
   return attributes;
 }
 
@@ -27,7 +37,7 @@ function extractCustomAttributes(obj: Record<string, any>): CustomAttributes {
 export function transformEvent(event: SpektrixEvent): Event {
   // Extract all custom attributes
   const attributes = extractCustomAttributes(event);
-  
+
   // Create a new object with all standard properties
   const transformedEvent: Event = {
     description: event.description,
@@ -42,9 +52,9 @@ export function transformEvent(event: SpektrixEvent): Event {
     name: event.name,
     thumbnailUrl: event.thumbnailUrl,
     webEventId: event.webEventId,
-    attributes
+    attributes,
   };
-  
+
   return transformedEvent;
 }
 
@@ -56,7 +66,7 @@ export function transformEvent(event: SpektrixEvent): Event {
 export function transformInstance(instance: SpektrixInstance): Instance {
   // Extract all custom attributes
   const attributes = extractCustomAttributes(instance);
-  
+
   // Create a new object with all standard properties
   const transformedInstance: Instance = {
     event: instance.event,
@@ -73,9 +83,9 @@ export function transformInstance(instance: SpektrixInstance): Instance {
     stopSellingAtWeb: instance.stopSellingAtWeb,
     stopSellingAtWebUtc: instance.stopSellingAtWebUtc,
     webInstanceId: instance.webInstanceId,
-    attributes
+    attributes,
   };
-  
+
   return transformedInstance;
 }
 
@@ -95,4 +105,48 @@ export function transformEvents(events: SpektrixEvent[]): Event[] {
  */
 export function transformInstances(instances: SpektrixInstance[]): Instance[] {
   return instances.map(transformInstance);
+}
+
+/**
+ * Transforms Spektrix XML event data into aggregated availability metrics
+ * @param xmlData Raw XML string from the Spektrix API
+ * @returns Aggregated event availability metrics
+ */
+export function transformEventAvailability(xmlData: string): EventAvailability {
+  // Parse XML response to JavaScript object
+  const parser = new XMLParser({
+    ignoreAttributes: false,
+    attributeNamePrefix: "",
+  });
+
+  const parsedData = parser.parse(xmlData) as SpektrixEventXml;
+
+  // Extract event times
+  const eventTimes = Array.isArray(parsedData.Event.Times.EventTime)
+    ? parsedData.Event.Times.EventTime
+    : [parsedData.Event.Times.EventTime]; // Handle case where there's only one event time
+
+  // Aggregate availability metrics
+  const availability: EventAvailability = eventTimes.reduce(
+    (acc, time) => {
+      return {
+        capacity: acc.capacity + Number(time.Capacity),
+        available: acc.available + Number(time.SeatsAvailable),
+        locked: acc.locked + Number(time.SeatsLocked),
+        reserved: acc.reserved + Number(time.SeatsReserved),
+        selected: acc.selected + Number(time.SeatsSelected),
+        sold: acc.sold + Number(time.SeatsSold),
+      };
+    },
+    {
+      capacity: 0,
+      available: 0,
+      locked: 0,
+      reserved: 0,
+      selected: 0,
+      sold: 0,
+    }
+  );
+
+  return availability;
 }

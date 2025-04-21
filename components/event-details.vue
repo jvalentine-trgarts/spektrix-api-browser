@@ -7,7 +7,7 @@ import { formatDate, formatId } from "~/utils/formatters";
 <template>
   <div>
     <div v-if="selectedEvent">
-      <div class="flex items-center">
+      <div class="flex items-center p-6">
         <img
           v-if="selectedEvent.imageUrl != ''"
           class="inline-block object-cover size-24 rounded-md mr-6"
@@ -35,8 +35,10 @@ import { formatDate, formatId } from "~/utils/formatters";
         </div>
       </div>
 
+      <EventAvailability />
+
       <div>
-        <div class="mt-6 border-t border-gray-200 -mx-6">
+        <div class="border-t border-gray-200">
           <dl class="divide-y divide-gray-200">
             <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
               <dt>
