@@ -81,3 +81,48 @@ export interface Instance {
   // Client-specific attributes
   attributes: CustomAttributes;
 }
+
+export interface SpektrixEventTime {
+  Attributes: any;
+  Capacity: number;
+  EventInstanceId: string;
+  OnSaleOnWeb: boolean;
+  SeatsAvailable: number;
+  SeatsLocked: number;
+  SeatsReserved: number;
+  SeatsSelected: number;
+  SeatsSold: number;
+  Time: string;
+  WebInstanceId: string | null;
+}
+
+export interface SpektrixEventXml {
+  Event: {
+    Attributes: {
+      EventAttribute: Array<{ Name: string; Value: string }>;
+    };
+    Description: string;
+    Duration: number;
+    FirstInstance: string;
+    Html: string;
+    Id: string;
+    ImageUrl: string;
+    LastInstance: string;
+    Name: string;
+    OnSaleOnWeb: boolean;
+    ThumbnailUrl: string;
+    Times: {
+      EventTime: SpektrixEventTime[];
+    };
+    WebEventId: string | null;
+  };
+}
+
+export interface EventAvailability {
+  capacity: number;
+  available: number;
+  locked: number;
+  reserved: number;
+  selected: number;
+  sold: number;
+}
