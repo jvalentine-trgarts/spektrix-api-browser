@@ -29,7 +29,7 @@ function getCompanyInitials(name: string): string {
 export default defineEventHandler(
   async (event): Promise<ClientInfo> => {
     const query = getQuery(event) as QueryParams;
-    const systemName = query.systemName;
+    const systemName = query.systemName?.toLocaleLowerCase();
 
     if (!systemName) {
       throw createError({
